@@ -5,13 +5,12 @@ counter = function() {
   var value = $('textarea#micropost_content').val();
 
   if (value.length == 0) {
-    $('#wordCount').html(140);
+    $('#charCount').html(140);
     return;
   }
 
-  var regex = /\s+/gi;
-  var wordCount = value.trim().replace(regex, ' ').split(' ').length;
-  $('#wordCount').html(140 - wordCount);
+  var charCount = value.trim().length;
+  $('#charCount').html(140 - charCount);
 };
 
 $(document).ready(function() {
